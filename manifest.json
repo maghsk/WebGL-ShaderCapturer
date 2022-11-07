@@ -1,0 +1,24 @@
+{
+  "name": "Hello Extensions",
+  "description": "Base Level Extension",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "hello.html",
+    "default_icon": "iwanna.png"
+  },
+  "web_accessible_resources": [{
+    "resources": ["scripts/inject.js"],
+    "matches": ["<all_urls>"]
+  }],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["scripts/shadow_inject.js"],
+      "run_at": "document_start"
+    }
+  ]
+  // "externally_connectable": {
+  //   "matches": ["<all_urls>"]
+  // }
+}
